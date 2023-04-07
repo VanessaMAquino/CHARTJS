@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHARTJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {display: flex;}
+    </style>
+</head>
+  <body>
+    <div style="width: 40vw;">
+    <canvas id="firstChart"></canvas>
+    </div>
+    <div style="width: 40vw;">
+    <canvas id="secondChart"></canvas>
+    </div>
+  </body>
+  <script>
+    const ct1 = document.getElementById('firstChart');
+    const ct2 = document.getElementById('secondChart');
+    new Chart(ct1, {
+      type: 'line',
+      data: {
+
+        labels: [
+        '12:00',
+        '13:00', 
+        '14:00', 
+        '15:00', 
+        '16:00', 
+        '17:00'],
+        datasets: [{
+          label: 'Temperatura',
+          data: [30, 29, 28, 25, 22, 23],
+          borderColor: "#FFC0CB",
+          backgroundColor: "#FA8072",
+          borderWidth: 3},
+        {
+          label: 'Umidade',
+          data: [80, 82, 80, 85, 80, 83],
+          borderColor: "#B22222",
+          backgroundColor: "#8B0000",
+          borderWidth: 3}]},
+
+    options: {
+    scales: {
+    y: {
+    beginAtZero: false }} }
+    });
+
+    new Chart(ct2, {
+      type: 'bar',
+      data: {
+        labels: [
+         'Janeiro',
+         'Fevereiro', 
+         'Março', 
+         'Abril', 
+         'Maio', 
+         'Junho'],
+
+          datasets: [{
+          label: 'Temperatura Média',
+          data: [22, 24, 27, 23, 20, 18],
+          borderColor: "#FFC0CB",
+          backgroundColor: "#FA8072",
+          borderWidth: 3 },
+          {
+          label: 'Umidade Média',
+          data: [90, 89, 93, 87, 88, 82],
+          borderColor: "#B22222",
+          backgroundColor: "#8B0000",
+          borderWidth: 3} ]},
+
+        options: {
+        scales: {
+        y: {
+        beginAtZero: false }}}
+    });
+  </script>
+</html>
